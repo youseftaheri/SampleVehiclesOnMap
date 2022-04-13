@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1043591038208",
+    "project_id": "samplevehicleonmap",
+    "storage_bucket": "samplevehicleonmap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043591038208:android:338c691c6ca45b20795fe5",
+        "android_client_info": {
+          "package_name": "com.yousef.sampleVehiclesOnMap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043591038208-6sqgtijg2kv0n26kcjj457f24itaoum7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqcR6ViaKuySuEDt6wEuh_DiRgbULKtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043591038208-6sqgtijg2kv0n26kcjj457f24itaoum7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

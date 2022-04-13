@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix,UnusedAttribute">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.yousef.sampleVehiclesOnMap.ui.vehicleListFragment.VehicleListItemViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvVehicleItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0031013F"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:onClick="@{() -> viewModel.onClick()}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="4"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="@dimen/_4sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvLatitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:srcCompat="@{viewModel.fleetImage}"
+                android:foreground="@drawable/dark_transparent_image_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/tvFleetType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.fleetType}"
+                android:elevation="@dimen/_6sdp"
+                android:layout_gravity="bottom"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:layout_margin="@dimen/_5sdp"/>
+        </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/ivLocationIcon"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:elevation="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/icon_geolocation"
+                app:layout_constraintTop_toTopOf="@id/tvLatitude"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvLongitude"
+                app:layout_constraintVertical_bias="0.5" />
+            <TextView
+                android:id="@+id/tvLatitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1"
+                android:text="@{viewModel.latitude}"
+                android:layout_gravity="start"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_10sdp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:elevation="@dimen/_6sdp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/cvImage"
+                app:layout_constraintStart_toEndOf="@id/ivLocationIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvLongitude" />
+            <TextView
+                android:id="@+id/tvLongitude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1"
+                android:text="@{viewModel.longitude}"
+                android:layout_gravity="start"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_10sdp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:elevation="@dimen/_6sdp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/tvLatitude"
+                app:layout_constraintStart_toEndOf="@id/ivLocationIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
